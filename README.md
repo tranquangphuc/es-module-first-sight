@@ -9,6 +9,8 @@ This works, but they are some annoying problems that result.
 1. First, all of your script tags need to be in the right order. Then you have to be careful to make sure that no one messes up that order.
 2. A second problem is that because these variables are on the global scope, every part of the code that’s inside of that global scope can change the variable. Malicious code can change that variable on purpose to make your code do something you didn’t mean for it to, or non-malicious code could just accidentally clobber your variable.
 
+Source: [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+
 ## How do modules help?
 
 Modules can:
@@ -16,14 +18,7 @@ Modules can:
 1.  Be shared among projects easily.
 2.  Be tested independently.
 3.  Have their own namespace and scope and can have private variables.
-4.  Provide a clear and cleanly defined interface to a body of code.
-5.  Can be connected with a code loading mechanism for loading pieces of code.
-
-## JavaScript Module Systems
-
-Since modules are so useful, there have been multiple attempts to add module functionality to JavaScript. Today there are two module systems that are actively being used. CommonJS (CJS) is what Node.js has used historically. ESM (EcmaScript modules) is a newer system which has been added to the JavaScript specification. Browsers already support ES modules (over 90% globally, https://caniuse.com/es6-module), and Node is adding support.
-
-See how ES Module work and what is it different with CJS: [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+5.  Dynamic loading
 
 ## Understanding ES Module
 
@@ -94,16 +89,12 @@ More example from `moz://a`:
 - [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 - [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 
-## Best Practices
+## Some Practices
 
 1. Prefer named exports
 2. Default export names should match file names
 3. `import` first, `export` last
 4. Import neccessary, avoid import whole module
-
-See more:
-
-See more: [ES6 Modules in Depth](https://ponyfoo.com/articles/es6-modules-in-depth)
 
 ## Addition Notes
 
@@ -113,3 +104,5 @@ See more: [ES6 Modules in Depth](https://ponyfoo.com/articles/es6-modules-in-dep
 - Modules are only executed once, even if they have been referenced in multiple `<script>` tags.
 - Last but not least, let's make this clear — module features are imported into the scope of a single script — they aren't available in the global scope. Therefore, you will only be able to access imported features in the script they are imported into, and you won't be able to access them from the JavaScript console, for example. You'll still get syntax errors shown in the DevTools, but you'll not be able to use some of the debugging techniques you might have expected to use.
 - **Binding**, not values, not references
+
+See more: [ES6 Modules in Depth](https://ponyfoo.com/articles/es6-modules-in-depth)
