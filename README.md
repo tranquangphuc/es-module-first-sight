@@ -48,7 +48,9 @@ console.log(`sum(${values}) = ${sum(values)}`);
 import sumValues from './sum.mjs';
 
 export function sumOdd(values) {
-  return sumValues(values.filter((item, index) => index % 2 === 0));
+  return sumValues(
+    values.filter((item, index) => index % 2 === 0)
+  );
 }
 
 // index.mjs
@@ -78,7 +80,7 @@ console.log(`Multiply: ${multiply(values)}`);
 console.log(`Subtract: ${subtract(1000, values)}`);
 ```
 
-### Import an Entire Module
+### Import Whole Module
 
 ```js
 // index.mjs
@@ -87,14 +89,19 @@ console.log(`Multiply: ${ops.multiply(values)}`);
 console.log(`Subtract: ${ops.subtract(1000, values)}`);
 ```
 
-More syntax: [Importing/Exporting in ES6](http://helabenkhalfallah.e-monsite.com/blog/javascript/js-best-practices-importing-exporting-in-es6.html)
+More example from `moz://a`:
+
+- [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 
 ## Best Practices
 
 1. Prefer named exports
-2. Default export names and file names should match
-3. `import` at the top, `export` at the bottom
-4. Follow Sonar Rules
+2. Default export names should match file names
+3. `import` first, `export` last
+4. Import neccessary, avoid import whole module
+
+See more:
 
 See more: [ES6 Modules in Depth](https://ponyfoo.com/articles/es6-modules-in-depth)
 
@@ -105,3 +112,4 @@ See more: [ES6 Modules in Depth](https://ponyfoo.com/articles/es6-modules-in-dep
 - There is no need to use the `defer` attribute (see [`<script>` attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#Attributes 'The HTML `<script>` element is used to embed or reference executable code; this is typically used to embed or refer to JavaScript code.')) when loading a module script; modules are deferred automatically.
 - Modules are only executed once, even if they have been referenced in multiple `<script>` tags.
 - Last but not least, let's make this clear — module features are imported into the scope of a single script — they aren't available in the global scope. Therefore, you will only be able to access imported features in the script they are imported into, and you won't be able to access them from the JavaScript console, for example. You'll still get syntax errors shown in the DevTools, but you'll not be able to use some of the debugging techniques you might have expected to use.
+- **Binding**, not values, not references
