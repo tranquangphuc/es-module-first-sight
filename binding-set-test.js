@@ -1,2 +1,2 @@
-import { COLLECTION } from './binding.mjs';
+import { COLLECTION } from './binding.js';
 console.log('import', 'collection', COLLECTION);

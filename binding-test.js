@@ -1,6 +1,6 @@
-import { name } from './binding.mjs';
-import { NOW as n1, COLLECTION as C1 } from './binding.mjs';
-import { NOW as n2, COLLECTION as C2 } from './binding.mjs';
+import { name } from './binding.js';
+import { NOW as n1, COLLECTION as C1 } from './binding.js';
+import { NOW as n2, COLLECTION as C2 } from './binding.js';
 console.log('1st', 'import { NOW as n1, COLLECTION as C1 }');
 console.log('2nd', 'import { NOW as n2, COLLECTION as C2 }');
 console.log(

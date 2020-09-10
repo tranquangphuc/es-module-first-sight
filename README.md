@@ -25,13 +25,13 @@ Modules can:
 ### Create and Using Module
 
 ```js
-// sum.mjs
+// sum.js
 export default function (values) {
   return values.reduce((total, val) => total + val, 0);
 }
 
-// index.mjs
-import sum from './sum.mjs';
+// index.js
+import sum from './sum.js';
 let values = [10, 20, 30, 40, 50];
 console.log(`sum(${values}) = ${sum(values)}`);
 ```
@@ -39,8 +39,8 @@ console.log(`sum(${values}) = ${sum(values)}`);
 ### Export Named Features from a Module
 
 ```js
-// sumOdd.mjs
-import sumValues from './sum.mjs';
+// sumOdd.js
+import sumValues from './sum.js';
 
 export function sumOdd(values) {
   return sumValues(
@@ -48,16 +48,16 @@ export function sumOdd(values) {
   );
 }
 
-// index.mjs
+// index.js
 // let values = ...
-import { sumOdd } from './sumOdd.mjs';
+import { sumOdd } from './sumOdd.js';
 console.log(`sumOdd(${values}) = ${sumOdd(values)}\n`);
 ```
 
 ### Define Multiple Named Features in a Module
 
 ```js
-// operations.mjs
+// operations.js
 export function multiply(values) {
   return values.reduce((total, val) => total * val, 1);
 }
@@ -68,9 +68,9 @@ export function divide(first, second) {
   return first / second;
 }
 
-// index.mjs
+// index.js
 // let values = ...
-import { multiply, subtract } from './operations.mjs';
+import { multiply, subtract } from './operations.js';
 console.log(`Multiply: ${multiply(values)}`);
 console.log(`Subtract: ${subtract(1000, values)}`);
 ```
@@ -78,8 +78,8 @@ console.log(`Subtract: ${subtract(1000, values)}`);
 ### Import Whole Module
 
 ```js
-// index.mjs
-import * as ops from './operations.mjs';
+// index.js
+import * as ops from './operations.js';
 console.log(`Multiply: ${ops.multiply(values)}`);
 console.log(`Subtract: ${ops.subtract(1000, values)}`);
 ```
