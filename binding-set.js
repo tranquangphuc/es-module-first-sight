@@ -1,4 +1,4 @@
-import { name, ONE, TWO, NOW, COLLECTION } from './binding.js';
+import { ONE, TWO, NOW, COLLECTION } from './binding.js';
 // ONE = 2; // read-only
 // TWO = 1; // read-only
 // name = 'dirty'; // read-only

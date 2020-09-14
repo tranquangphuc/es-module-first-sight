@@ -1,3 +1,15 @@
+A server needed to run example code.
+
+Using python:
+```sh
+python -m http.server
+```
+or using npm:
+```sh
+npm install --global serve
+serve
+```
+
 ## The jQuery days' problems
 
 The only way to share variables/functions is to put it on the scope above you.
@@ -18,7 +30,7 @@ Modules can:
 1.  Be shared among projects easily.
 2.  Be tested independently.
 3.  Have their own namespace and scope and can have private variables.
-5.  Dynamic loading
+4.  Dynamic loading
 
 ## Understanding ES Module
 
@@ -34,6 +46,11 @@ export default function (values) {
 import sum from './sum.js';
 let values = [10, 20, 30, 40, 50];
 console.log(`sum(${values}) = ${sum(values)}`);
+```
+
+```html
+<!-- index.html -->
+<script src="index.js" type="module"></script>
 ```
 
 ### Export Named Features from a Module

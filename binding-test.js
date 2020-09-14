@@ -16,5 +16,5 @@ console.log(
 
 console.log('1st log', 'name', name);
 setTimeout(() => {
-  console.log('2nd log', 'name', name, 'changed => binding, not value, not reference');
+  console.log('2nd log', 'name', name, 'changed => binding, not values, not references');
 }, 4000);
